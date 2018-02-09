@@ -15,6 +15,8 @@ dist/
 downloads/
 eggs/
 .eggs/
+data/train/
+data/test/
 lib/
 lib64/
 parts/
