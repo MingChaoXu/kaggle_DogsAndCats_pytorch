@@ -5,7 +5,7 @@ import numpy as np
 from torchvision import transforms as T
 
 
-class DogCat(data.dataset):
+class DogCat(data.Dataset):
     def __init__(self, root, transforms=None, train=True, test=False):
         '''
         目标：获取所有图片地址，并根据训练、验证、测试划分数据
@@ -41,7 +41,7 @@ class DogCat(data.dataset):
             # 测试集和验证集
             if self.test or not train:
                 self.transforms = T.Compose([
-                    T.Resize(224),
+                    T.Scale(224),
                     T.CenterCrop(224),
                     T.ToTensor(),
                     normalize
@@ -49,7 +49,7 @@ class DogCat(data.dataset):
             # 训练集
             else:
                 self.transforms = T.Compose([
-                    T.Resize(256),
+                    T.Scale(256),
                     T.RandomCrop(224),
                     T.RandomHorizontalFlip(),
                     T.ToTensor(),

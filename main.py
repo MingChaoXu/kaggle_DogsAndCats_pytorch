@@ -71,7 +71,7 @@ def train(**kwargs):
 
     # step4: meters
     loss_meter = meter.AverageValueMeter()
-    confusion_matrix = meter.ConfusionMeter()
+    confusion_matrix = meter.ConfusionMeter(2)
     previous_loss = 1e100
 
     # train

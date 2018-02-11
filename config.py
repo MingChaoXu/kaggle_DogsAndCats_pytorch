@@ -8,10 +8,10 @@ class DefaultConfig(object):
 
     train_data_root = './data/train/'  # 训练集存放路径
     test_data_root = './data/test/'  # 测试集存放路径
-    load_model_path = 'checkpoints/model.pth'  # 加载预训练的模型的路径，为None代表不加载
+    load_model_path = None # 'checkpoints/model.pth'  # 加载预训练的模型的路径，为None代表不加载
 
     batch_size = 128  # batch size
-    use_gpu = True  # user GPU or not
+    use_gpu = False #True  # user GPU or not
     num_workers = 4  # how many workers for loading data
     print_freq = 20  # print info every N batch
 
